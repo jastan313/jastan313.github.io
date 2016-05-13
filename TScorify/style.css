@@ -1,0 +1,152 @@
+/* KISS CSS... */
+
+* {
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Garamond, Times, Arial;
+	background: white;
+}
+
+.container {
+	border-radius: 4px;
+	margin-left: 50px;
+	margin-right: 50px;
+	border: 1px;
+	background: url('background.jpg');
+	background-repeat: repeat-y;
+	background-size: 100% auto;
+}
+
+a {
+	color: orangeRed;
+	font-style: oblique;
+}
+
+h1, h2, h3, h4, h5, h6, p, code {
+	text-shadow: 0px 1px #aaaaaa;
+	text-align: center;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+h1 {
+	font-size: 30pt;
+	font-style: oblique;
+}
+
+h2 {
+	font-size: 15pt;
+	padding-bottom: 25px;
+	text-align: left;
+}
+
+h3 {
+	font-size: 14pt;
+	padding-bottom: 10px;
+	text-align: left;
+	text-decoration: underline;
+	font-style: oblique;
+}
+
+h4 {
+	font-size: 12pt;
+	text-align: left;
+}
+
+h5 {
+	text-align: left;
+	font-size: 10pt;
+}
+
+h6 {
+	font-size: 9pt;
+	padding-bottom: 25px;
+}
+
+code {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	font-size: 11pt;
+}
+
+input {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label {
+	color: darkRed;
+	font-style: oblique;
+	border: 2px solid darkRed;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 2px 10px 2px 8px;
+	margin: 0px 3px 10px 3px;
+	font-size: 13pt;
+	display: inline-block;
+}
+
+#input_label {
+	margin: 0;
+	color: orangeRed;
+	font-style: oblique;
+	border: 2px solid orangeRed;
+	border-radius: 4px;
+	font-size: 12pt;
+	cursor: pointer;
+	padding: 1px 8px 1px 6px;
+	display: inline-block;
+}
+
+#input_label:hover  {
+	color: darkOrange;
+	border: 2px solid darkOrange;
+}
+
+label:hover {
+	color: orangeRed;
+	border: 2px solid orangeRed;
+}
+
+a:hover {
+	color: darkOrange;
+}
+
+#message, #list_step, #list_header, #list, #cloud_step, #cloud_header, #cloud {
+	display: none;
+}
+
+#list, #cloud {
+	padding: 20px;
+	min-height: 600px;
+	margin-left: 10%;
+	margin-right:10%;
+	border: 2px solid darkOrange;
+	border-radius: 4px;
+}
+
+#space {
+	min-height: 180px;
+}
+
+p {
+	display: inline-block;
+	font-family: Helvetica Bold, Helvetica, Candara; 
+	padding: 1px 10px 1px 8px;
+	margin: 1px;
+	font-style: oblique;
+}
+
+p:hover {
+	color: black;
+}

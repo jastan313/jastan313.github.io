@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>TScorify</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+	<div class="container">
+		<h1>TScorify</h1>
+		<h6>by <a href="http://www.jastan313.co.nf/">Jason Tan</a></h6>
+
+		<h2>TScorify, a Spark application written in Scala, takes a text file dataset and associates each individual file with its keywords.
+			Keywords are selected based on their <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">IF-IDF</a> score. This website
+			is a guide and a tool to visually display the resulting keywords.</h2>
+		<h3>How To Start:</h3>
+
+		<h4>(0) [Setup step; you may skip to step (1) if you already have Spark and Scala installed.] This app requires you to have Apache 
+			Spark and Scala installed on you computer. Click here, <a href="http://spark.apache.org/downloads.html">Spark</a> and 
+			<a href="http://www.scala-lang.org/download/">Scala</a>, to download them respectively.</h4>
+		<h5>For Spark, select Spark release: "1.6.1", package type: "Pre-built for Hadoop 2.6 and later", download type: "Direct Download", 
+			and click the TGZ link to start your download.</h5>
+		<h5>For Scala, click the first link for Scala binaries.</h5>
+		<br>
+
+		<h4>(1) Click <a href="/tscorify.jar">here</a> to download the JAR containing the application.</h4>
+		<br>
+
+		<h4>(1.1) [Optional step; you may skip to step (2) if you do not require an example input dataset.] Click <a href="/textfiles.zip">here</a>
+			to download a zip file containing an example directory of text files which you may use as input for testing the app.</h4>
+		<br>
+
+
+		<h4>(2) Open up command prompt and navigate to the directory containing the JAR file, tscorify.jar. [For example, if tscorify.jar is in
+		    your Desktop directory, navigate to "/Desktop/".]</h4>
+		<br>
+
+		<h4>(3) Type the command below:</h4>
+		<h5>You may choose which input and output directories to use as command line arguments. For example, if the directory containing the text files
+			are located in a directory named "textfiles", you can use the option --input=textfiles to specify that directory as your input directory. Use
+			the --help option for further assistance. Note: You may see an error occur with the ShutdownHookManager after the application finishes executing.
+			This is totally fine.</h5>
+
+		<br><code><var>YOUR_SPARK_HOME</var>/bin/spark-submit --class "TScorify" --master local[4] tscorify.jar --verbose</code><br><br>
+
+		<h4>(4) Navigate to the output directory and you may manually inspect the resulting data found in files named part-XXXXX. [For example, if the
+			output directory is "/TClassify_Result/", you may find files named part-00000 and part-00001.]</h4>
+		<br>	
+
+		<h4>(4.1) [Optional step; you may skip to step (5) if you do not require an example result dataset.] Click <a href="/results.zip">here</a>
+			to download a zip file containing an example directory of result files which you may use as input for step (5).</h4>
+		<br>
+
+		<h4>(5) [Optional step, but recommended!] To see the result data in a more graphical context, <label id="input_label" for="input_files">upload</label> 
+			the result files.
+			<input id="input_files" type="file" multiple onchange="listFiles()"/>
+		</h4>
+		<h5 id="message"></h5>
+		<br>
+
+		<div id="space">
+			<h4 id="list_step">(6) Nice! Here is the list of files and their top keywords. Click on a file's name to see the file's entire keyword list.</h4>
+			<br>
+
+			<h3 id="list_header">File List:</h3>
+			<div id="list"></div>
+			<br>
+
+			<h4 id="cloud_step">(7) I have generated a keyword cloud for the particular file. The bigger the keyword, the higher its relative ID-IDF score!</h4>
+			<br>
+
+			<h3 id="cloud_header"></h3>
+			<div id="cloud"></div>
+			<br>
+		</div>
+	</div>
+	<script type='text/javascript' src='scripts.js'></script>
+</body>
+</html>
