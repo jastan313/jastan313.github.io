@@ -94,6 +94,7 @@ label {
 	margin: 0px 3px 10px 3px;
 	font-size: 13pt;
 	display: inline-block;
+	background-color: rgba(0,0,0, 0.05);
 }
 
 #input_label {
@@ -116,6 +117,7 @@ label {
 label:hover {
 	color: orangeRed;
 	border: 2px solid orangeRed;
+	background-color: rgba(255,255,255, 0.2);
 }
 
 a:hover {
@@ -145,8 +147,15 @@ p {
 	padding: 1px 10px 1px 8px;
 	margin: 1px;
 	font-style: oblique;
+	color: darkRed;
+	border: 2px solid darkRed;
+	border-radius: 5px;
+	background-color: rgba(0,0,0, 0.05);
 }
 
 p:hover {
-	color: black;
+	color: orangeRed;
+	border: 2px solid orangeRed;
+	cursor: pointer;
+	background-color: rgba(255,255,255, 0.2);
 }

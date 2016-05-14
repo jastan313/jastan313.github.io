@@ -59,9 +59,8 @@ function generateList() {
 					el.onclick = function() { generateCloud(this.innerHTML.split(' : ')[0]); };
 					list.appendChild(el);
 				}
-
 			}
-    	}
+    	};
     	reader.onerror = function(evt) {
     		errorFlag = true;
     	}
@@ -72,7 +71,6 @@ function generateList() {
 }
 
 function generateCloud(elName) {
-	console.log('Generating cloud for: ' + elName);
 	var foundFlag = false;
 	var cloud = get('cloud');
 	while (cloud.lastChild) {
@@ -101,27 +99,73 @@ function generateCloud(elName) {
 						var val = item[1].replace(')', '');
 						var size = Math.floor((val - minVal)/delta) + 8;
 						var el = document.createElement('p');
-						el.innerHTML = item[0].replace('(', '');
+						var node = document.createTextNode(item[0].replace('(', ''));
+						el.appendChild(node);
+						el.onclick = function() { generateListCloud(this.innerHTML)};
 						el.style.fontSize = size + 'pt';
-						var red = 139 + Math.floor((Math.random() * 120) + 1);
-						var green = Math.floor((Math.random() * 120) + 1);
-						var blue = Math.floor((Math.random() * 120) + 1);
-						el.style.color = 'rgb(' + red + ',' + green + ',' + blue + ')';
-						el.style.border = Math.floor(size/8) + 'px solid rgb(' + red + ',' + green + ',' + blue + ')';
-						el.style.borderRadius = Math.floor(size/3) + 'px';
 						cloud.appendChild(el);
 					}
 				}
 			}
-    	}
+    	};
     	if(foundFlag) break;
 	}
 
-	get('cloud_step').style.display = 'block';
+	var cloud_step = get('cloud_step');
+	cloud_step.innerHTML = '(7) I have generated a keyword cloud for the particular file. The bigger the keyword, the higher its relative ID-IDF score! \
+	                       Click on a keyword to see which files have it as a keyword.';
+	cloud_step.style.display = 'block';
 	cloud.style.display = 'block';
 	var cloud_header = get('cloud_header');
 	cloud_header.style.display = 'block';
-	scrollTo(document.documentElement, cloud_header.offsetTop - 10);
+	scrollTo(document.documentElement, cloud_step.offsetTop - 10);
+}
+
+function generateListCloud(s) {
+	var cloud = get('cloud');
+	while (cloud.lastChild) {
+    	cloud.removeChild(cloud.lastChild);
+	}
+	var header = get('cloud_header');
+	header.innerHTML = '[' + s + '] File List:';
+
+	var inp = get('input_files');
+	for(var i = 0; i < inp.files.length; ++i) {
+		var reader = new FileReader();
+		reader.onload = function (evt) {
+			var lines = evt.target.result.split('\n');
+			var fileArr = [];
+			for(var j = 0; j < lines.length; ++j) {
+				var name = getFilename(lines[j]);
+				if(name) {
+					var keywords = getKeywords(lines[j]);
+					for(var k = 0; k < keywords.length; ++k) {
+						var keyword = keywords[k].split(',')[0].replace('(', '');
+						if(keyword == s) {
+							fileArr.push(name);
+						}
+					}
+				}
+			}
+			for(var l = 0; l < fileArr.length; ++l) {
+				var el = document.createElement('label');
+				el.innerHTML = fileArr[l];
+				el.onclick = function() { generateCloud(this.innerHTML); };
+				cloud.appendChild(el);
+			}
+    	};
+    	reader.readAsText(inp.files[i], 'UTF-8');
+	}
+
+	var cloud_step = get('cloud_step');
+	cloud_step.innerHTML = '(7) I have generated a file list for the particular keyword. \
+								The following files have the keyword scored as one of their top keywords! \
+								Click on a file\'s name to see the file\'s entire keyword list.';
+	cloud_step.style.display = 'block';
+	cloud.style.display = 'block';
+	var cloud_header = get('cloud_header');
+	cloud_header.style.display = 'block';
+	scrollTo(document.documentElement, cloud_step.offsetTop - 10);
 }
 
 function getFilename(s) {
