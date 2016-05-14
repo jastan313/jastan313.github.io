@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Jason Tan's Portfolio | Contact Me</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+	<div id="background"></div>
+	<div id="parallax"></div>
+	<div id="scroll-container">
+		<div class="container">
+			<div id="page">
+				<div id="main-menu" class="menu-main-menu-container">
+					<ul id="menu-main-menu" class="menu">
+						<li class="menu-item page-home-php"><em></em><a href="About.htm">About Me</a></li>
+						<li class="menu-item page-projects-php "><em></em><a href="Projects.htm">Projects</a></li>
+						<li class="menu-item page-resume-php"><em></em><a href="Resume.htm">Resume</a></li>
+						<li class="menu-item current-menu-item page-contact-php"><em></em><a href="Contact.htm">Contact</a></li>
+					</ul>
+				</div>
+
+				<div id="site-info">
+						<img src="images/profile.jpg" alt="Jason's Profile"/>
+					<div class="text">
+						<h1>Feel free to contact me!</h1>
+						<h2>Whether that be questions, advice, critique, or opportunities.</h2><hr>
+						<h2>Email: <a href="mailto:jastan313@gmail.com">jastan313@gmail.com</a></h2>	
+						<h2>Phone: (415) 606-5079</h2>	
+					</div>
+				</div>
+
+				<div id="content">
+					<h2 class="entry-title">Send an email from here by filling out the information below.</h2>
+					<hr>
+
+					<form id="send_email">
+						<div class="contact-form" >
+							<div class="field">
+								<label>Your Name</label>
+								<span><input type="text" id="contact-name" name="full_name" value="" size="40" onkeyup='validateName()'/></span>
+								<span style="padding-left:5px" class='error-message' id='name-error'></span>
+							</div>
+
+							<div class="field">
+								<label>Your Email</label>
+								<span><input type="email" id="contact-email" name="email" value="" size="40" onkeyup='validateEmail()'/></span>
+								<span style="padding-left:5px" class='error-message' id='email-error'></span>
+							</div>
+
+							<div class="field">
+								<label>Subject</label>
+								<span><input type="text" id="contact-subject" name="subject" value="" size="40" onkeyup='validateSubject()'/></span>
+								<span style="padding-left:5px" class='error-message' id='subject-error'></span>
+							</div>
+
+							<div class="field message">
+								<label>Message</label>
+								<span><textarea name="message" id="contact-message" onkeyup='validateMessage()'></textarea></span>
+								<span style="position: relative; left: 164px" class='error-message' id='message-error'></span>
+							</div>
+							
+
+							<div class="field submit"><input id="contact-submit"  type="submit" value="Send" onclick='return validateForm()'/></div>
+							<span style="margin-left:19%" class='error-message' id='submit-message'></span>
+						</div>
+					</form>
+
+					<div class="clear"></div>
+					<div id="page-top"></div>
+					<div id="page-bottom"></div>
+					<div id="page-shadow"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type='text/javascript' src='scripts.js'></script>
+	<script type="text/javascript"> disableEmail(); </script>
+</body>
+</html>
