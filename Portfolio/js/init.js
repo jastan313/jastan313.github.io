@@ -118,15 +118,15 @@ jQuery(document).ready(function ($) {
         $('#image-loader').fadeIn();
         var contactName = $('#contactForm #contactName').val();
         var contactEmail = $('#contactForm #contactEmail').val();
-        var contactSubject = $('#contactForm #contactSubject').val();
+        var contactSubject = "Portfolio Website Contact: " + $('#contactForm #contactSubject').val();
         var contactMessage = $('#contactForm #contactMessage').val();
         var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
                 '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
         $.ajax({
-
             type: "POST",
-            url: "inc/sendEmail.php",
-            data: data,
+            url: "https://formspree.io/jastan313@gmail.com",
+            data: {message: data},
+            dataType: "json",
             success: function (msg) {
                 // Message was sent
                 if (msg == 'OK') {
