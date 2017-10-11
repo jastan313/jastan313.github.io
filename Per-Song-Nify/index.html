@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Per-Song-Nify</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/default.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <script src="js/facebook.js"></script>
+        <div class="container"  id="login-container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3" id="login-form-container">
+                    <h2>Login to Per-Song-Nify!</h2>
+                    <form id="login-form">
+                        <div class="form-group" id="email_group">
+                            <label for="user_email">Email Address</label>
+                            <input type="text" class="form-control" id="login-email" placeholder="per.song@nify.com">
+                            <div class="alert alert-danger" role="alert" id="alert-login-email-invalid">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Enter a valid email address.
+                            </div>
+                            <div class="alert alert-danger" role="alert" id="alert-login-email-mismatch">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                An account with this email address does not exist.
+                            </div>
+                        </div>
+                        <div class="form-group" id="password_group">
+                            <label for="user_password">Password</label>
+                            <input type="password" class="form-control" id="login-password" placeholder="******nify">
+                            <div class="alert alert-danger" role="alert" id="alert-login-password-invalid">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Enter a valid password (6 or more alphanumeric characters).
+                            </div>
+                            <div class="alert alert-danger" role="alert" id="alert-login-password-mismatch">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Password entered is incorrect.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-lg btn-primary">Log In</button>
+                    </form>
+                </div> 
+            </div>
+            <div class="row">
+                <h4>Don't have an account?</h4>
+                <button type="button" class="btn btn-info" id="signup-btn">Sign Up</button>
+            </div>
+      </div>
+        
+        <div class="container"  id="signup-container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3" id="signup-form-container">
+                    <h2>Create A Per-Song-Nify Account!</h2>
+                    <form id="signup-form">
+                        <div class="form-group" id="_name_group">
+                            <label for="user_name">Name</label>
+                            <input type="text" class="form-control" id="signup-name" placeholder="Per Song Nify">
+                            <div class="alert alert-danger" role="alert" id="alert-signup-name-invalid">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Enter your first and last name.
+                            </div>
+                        </div>
+                        <div class="form-group" id="email_group">
+                            <label for="user_email">Email Address</label>
+                            <input type="text" class="form-control" id="signup-email" placeholder="per.song@nify.com">
+                            <div class="alert alert-danger" role="alert" id="alert-signup-email-invalid">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Enter a valid email address.
+                            </div>
+                            <div class="alert alert-danger" role="alert" id="alert-signup-email-taken">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Email address is already taken.
+                            </div>
+                        </div>
+                        <div class="form-group" id="password_group">
+                            <label for="user_password">Password</label>
+                            <input type="password" class="form-control" id="signup-password" placeholder="******nify">
+                            <div class="alert alert-danger" role="alert" id="alert-signup-password-invalid">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Choose a password with 6 or more alphanumeric characters (i.e. a-z, A-Z, 0-9) and/or special characters (e.g. !@#%&*^~)
+                            </div>
+                        </div>
+                        <div class="form-group" id="facebook_group">
+                            <div class="fb-login-button" data-width="50px" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" onlogin="signupSubmit();"></div>
+                            <div class="alert alert-danger" role="alert" id="alert-signup-connect-invalid">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                Please agree to connect.
+                            </div>
+                        </div>
+                    </form>
+                </div> 
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-danger" id="back-btn">Back</button>
+            </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/init.js"></script>
+  </body>
+</html>

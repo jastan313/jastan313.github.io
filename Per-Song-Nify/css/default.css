@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 10, 2017, 7:55:51 PM
+    Author     : Jason Tan
+*/
+div, input {
+    text-align: center;
+    padding: 10px 30px 0px 30px;
+}
+
+span {
+    padding: 0px;
+}
+
+.alert {
+    margin-top: 2px;
+    padding: 8px;
+    display: none;
+}
+
+#login-form-container, #signup-form-container {
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 250px;
+    min-height: 320px;
+    background: #cccccc;
+    color: #003333;
+}
+
+#signup-container {
+    display: none;
+}
