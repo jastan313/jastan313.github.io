@@ -1,0 +1,152 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 19, 2017, 10:46:00 PM
+    Author     : Jason Tan
+*/
+
+
+/**************************************************************
+ *                             GENERAL                        *
+ **************************************************************/
+body {
+    background-color: #f2f5f5;   /* Slight blue-ish background */
+    padding: 20px;
+}
+
+body * {
+    font-family: 'Courier New', monospace;   /* Typewriter-like font */
+    font-size: 12px;
+    text-shadow: 0.25px 0.35px #c2c5c5;
+}
+
+/* Input style: simple, underlined fields with highlighted, pencil cursor on hover */
+input {
+    text-align: center;
+    color: #666666;
+    border: none;
+    border: 1px solid transparent;
+    border-bottom: black 2px outset;
+    background-color: transparent;
+}
+input:hover {
+    background-color: yellow;
+    cursor: url('../resources/pencil_cursor.cur'), auto;
+}
+
+/* Button style: simple black-and-white button with color inversion, pointer cursor on hover */
+button {
+    text-align: center;
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+#doc-container {
+    position: absolute;
+    margin: auto;
+    padding: 25px 20px 25px 20px;
+    left: 0; right: 0;   /* horizontal center */
+    top: 0; bottom: 0;   /* vertical center */
+    
+    /* Doc dimensions */
+    min-width: 320px;
+    min-height: 518px;
+    width: 55.636vw;   /* width:height ratio = 850:1375 (golden ratio) */
+    height: 90vw;      /* scaled with viewport width */
+    max-width: 55.636vh;  
+    max-height: 90vh;   /* max dimensions scaled with viewport height */
+    
+    /* Paper-esque styling */
+    background-image: url('../imgs/white_paper25.jpg');
+    background-color: #fcfcfc;
+    border: 1px #eeeeee solid;
+    box-shadow: 0px 12px 35px #bbbbbb, -5px 8px 10px black;
+    cursor: text;
+}
+#doc-content {
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Hide scrollbar in IE 10+ */
+    overflow: -moz-scrollbars-none;  /* Hide scrollbar in Firefox */
+}
+
+#doc-content::-webkit-scrollbar { 
+   display: none;  /* Hide scrollbar in Safari and Chrome */
+}
+
+/* Type-writer animation */
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .1em solid black; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .05em;
+  animation: 
+    typing 2.5s steps(30, end),
+    blink-caret .2s step-end infinite;
+  animation-fill-mode: forwards;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100%; }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
+
+/**************************************************************
+ *                             SIGNUP                         *
+ **************************************************************/
+#login-container > h1 {
+    font-weight: bolder;
+    font-size: calc(23px + .5vw + .5vh);
+}
+
+#login-container > h2 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: calc(6px + .3vw);
+}
+
+#login-container > #login-form {
+    text-align: center;
+}
+
+#login-form {
+    padding-top: 25%;
+}
+
+#login-form > h3 {
+    font-weight: lighter;
+}
+
+#login-form > * {
+    font-size: calc(10px + .5vw + .5vh);
+}
+
+#login-navigation {
+    padding-left: 20px;
+    padding-bottom: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#login-navigation > * {
+   font-weight: bold;
+   font-size: calc(7px + .25vw + .1vh);
+   display: inline-block;   
+}
