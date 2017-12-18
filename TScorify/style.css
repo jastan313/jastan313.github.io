@@ -12,13 +12,11 @@ body {
 }
 
 .container {
-	border-radius: 4px;
 	margin-left: 50px;
 	margin-right: 50px;
-	border: 1px;
 	background: url('background.jpg');
-	background-repeat: repeat-y;
-	background-size: 100% auto;
+	background-size: 100% 100%;
+	box-shadow: -1px 5px 5px darkgrey, 3px 5px 40px black;
 }
 
 a {
